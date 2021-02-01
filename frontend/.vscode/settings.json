@@ -8,5 +8,6 @@
     "tab.activeModifiedBorder": "#f908b4",
     "tab.inactiveModifiedBorder": "#f908b4",
     "tab.activeBorderTop": "#00000000"
-  }
+  },
+  "workbench.colorTheme": "Horizon"
 }

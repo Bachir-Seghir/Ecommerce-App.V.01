@@ -9,5 +9,6 @@
     "tab.inactiveModifiedBorder": "#f908b4",
     "tab.activeBorderTop": "#00000000"
   },
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "workbench.colorTheme": "Ayu Dark"
 }
