@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -208,7 +208,9 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             if (confirm('Are you sure you want delete this item?')) {
-              deleteItem();
+              deleteItem().catch(function (err) {
+                alert(err.message);
+              });
             }
           },
           __source: {
@@ -879,14 +881,29 @@ var Home = function Home(props) {
 
 /***/ }),
 
-/***/ 4:
+/***/ "./pages/items.js":
+/*!************************!*\
+  !*** ./pages/items.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ "./pages/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (_index__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
+/***/ 6:
 /*!******************************!*\
-  !*** multi ./pages/index.js ***!
+  !*** multi ./pages/items.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! ./pages/items.js */"./pages/items.js");
 
 
 /***/ }),
@@ -969,4 +986,4 @@ module.exports = require("styled-components");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=items.js.map
