@@ -170,6 +170,13 @@ function (_React$Component) {
         refetchQueries: [{
           query: _User__WEBPACK_IMPORTED_MODULE_3__["CURRENT_USER_QUERY"]
         }],
+        optimisticResponse: {
+          __typename: 'Mutation',
+          addToCart: {
+            __typename: 'CartItem',
+            id: id
+          }
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 19
@@ -182,7 +189,7 @@ function (_React$Component) {
           onClick: addToCart,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 37
           },
           __self: this
         }, "Add", loading && 'ing', " To Cart");

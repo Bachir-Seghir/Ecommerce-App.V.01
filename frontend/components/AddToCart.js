@@ -25,7 +25,14 @@ class AddToCart extends React.Component {
           {
             query: CURRENT_USER_QUERY,
           },
-        ]}>
+        ]}
+        optimisticResponse={{
+          __typename: 'Mutation',
+          addToCart: {
+            __typename: 'CartItem',
+            id,
+          },
+        }}>
         {(addToCart, { loading }) => (
           <button disabled={loading} onClick={addToCart}>
             Add{loading && 'ing'} To Cart

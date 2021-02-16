@@ -258,7 +258,6 @@ const Mutations = {
   },
   async removeFromCart(parent, args, ctx, info) {
     // find the cart item
-    console.log(args.id);
     const cartItem = await ctx.db.query.cartItem(
       {
         where: {
@@ -267,7 +266,6 @@ const Mutations = {
       },
       `{id, user {id}}`
     );
-    console.log('cart Item', cartItem);
     // make sure we found an item
     if (!cartItem) {
       throw new Error('no CartItem Found');
