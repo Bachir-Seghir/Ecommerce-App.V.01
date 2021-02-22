@@ -28,13 +28,15 @@ function totalItems(cart) {
 }
 const stripeKey =
   'pk_test_51INOBtDZsHpjbdoLCwlCUin7N8xrwRVz9bOa2NHO5xgMilHaL29IFWaEE89eaRJtYEF6bjWi5KOW5a0k9IQSyL8100HahIGj9E';
+
 class TakeMyMoney extends React.Component {
-  onToken = (res, createOrder) => {
-    createOrder({
+  onToken = async (res, createOrder) => {
+    const order = await createOrder({
       variables: {
         token: res.id,
       },
     }).catch((err) => alert(err.message));
+    console.log(order);
   };
   render() {
     return (
@@ -48,7 +50,9 @@ class TakeMyMoney extends React.Component {
                 amount={calcTotalPrice(me.cart)}
                 name='Mento Fits'
                 description={`Order of ${totalItems(me.cart)} items`}
-                image={me.cart[0].item && me.cart[0].item.image}
+                image={
+                  me.cart.length && me.cart[0].item && me.cart[0].item.image
+                }
                 stripeKey={stripeKey}
                 currency='USD'
                 email={me.email}
