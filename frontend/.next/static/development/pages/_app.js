@@ -1538,7 +1538,8 @@ function (_React$Component) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                nprogress__WEBPACK_IMPORTED_MODULE_5___default.a.start();
+                _context.next = 3;
                 return createOrder({
                   variables: {
                     token: res.id
@@ -1547,11 +1548,16 @@ function (_React$Component) {
                   return alert(err.message);
                 });
 
-              case 2:
+              case 3:
                 order = _context.sent;
-                console.log(order);
+                next_router__WEBPACK_IMPORTED_MODULE_4___default.a.push({
+                  pathname: '/order',
+                  query: {
+                    id: order.data.createOrder.id
+                  }
+                });
 
-              case 4:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -1575,7 +1581,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_User__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 47
         },
         __self: this
       }, function (_ref2) {
@@ -1587,7 +1593,7 @@ function (_React$Component) {
           }],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45
+            lineNumber: 49
           },
           __self: this
         }, function (createOrder) {
@@ -1604,7 +1610,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 49
+              lineNumber: 53
             },
             __self: this
           }, _this2.props.children);
