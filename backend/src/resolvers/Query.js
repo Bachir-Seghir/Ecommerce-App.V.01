@@ -1,4 +1,5 @@
 const { forwardTo } = require('prisma-binding');
+const Orders = require('stripe/lib/resources/Orders');
 const { hasPermission } = require('../utils');
 
 const Query = {
@@ -50,8 +51,24 @@ const Query = {
     if (!ownsOrder || !hasPermissionToSeeOrder) {
       throw new Error('You cant see this order');
     }
-    // 4. return the irder
+    // 4. return the order
     return order;
+  },
+
+  async orders(parent, args, ctx, info) {
+    // 1. query the current user and make sure they are signed in
+    const { userId } = ctx.request;
+    if (!userId)
+      throw new Error('You must be logged in to complete this order');
+
+    return ctx.db.query.orders(
+      {
+        where: {
+          user: { id: userId },
+        },
+      },
+      info
+    );
   },
 };
 
